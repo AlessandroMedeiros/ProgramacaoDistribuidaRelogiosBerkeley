@@ -26,7 +26,7 @@ public class ServerClock extends UnicastRemoteObject implements IServerClock {
     long localTimeNano = clockClientTime.toNanoOfDay();
     long currentNano = this.getClock().toNanoOfDay();
     var newTimeNano = currentNano - localTimeNano;
-    newTimeNano = newTimeNano * -1 + nano + localTimeNano;
+    newTimeNano = newTimeNano * (-1) + nano + localTimeNano;
     LocalTime newLocalTime = LocalTime.ofNanoOfDay(newTimeNano);
     System.out.println("Horario atualizado: " + fTimeFormatter.format(newLocalTime));
     this.currentTime = newLocalTime;
