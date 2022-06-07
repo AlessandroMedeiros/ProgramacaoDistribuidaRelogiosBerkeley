@@ -1,3 +1,5 @@
+package client.Node;
+
 import java.time.LocalTime;
 
 public class Node {
