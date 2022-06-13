@@ -18,11 +18,10 @@ public class Server {
       System.out.println("RMI registry already running.");
     }
     try {
-      // String server = "rmi://" + Inet4Address.getLocalHost().getHostAddress() +
-      // ":1099";
+      String server = Inet4Address.getLocalHost().getHostAddress() + ":1099";
       Naming.rebind(ServerClock.class.getSimpleName(), new ServerClock(LocalTime.now()));
       System.out.println("Server is ready.");
-      System.out.println("URL: " + Inet4Address.getLocalHost().getHostAddress() + ":1099");
+      System.out.println("URL: " + server);
     } catch (Exception e) {
       System.out.println("Server failed:");
       e.printStackTrace();
